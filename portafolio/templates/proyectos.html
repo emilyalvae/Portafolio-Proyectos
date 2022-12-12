@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br><br>
+<h3 class="text-center">LISTA DE PROYECTOS</h3>
+<section>
+    {% if proyectos %}
+    {% for proyecto in proyectos %}
+    <div class="container">
+        <br><br>
+        <div class="row">
+            <div class="card">
+                <div class = "card-body">
+                    <div class="resume-section-content">
+                        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                            <div class="flex-grow-1">
+                                
+                                <img src="{{ p.imagen.url }}" alt="foto proyecto">
+                                
+                                <h3 class="mb-0">{{proyecto.titulo}}</h3>
+                                <p>{{proyecto.descripcion}}</p>
+                                <div class="subheading mb-3">{{proyecto.tags}}</div>
+                                <div class="subheading mb-3">{{proyecto.url_github}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+</section>       
+{% endblock %}  
+           
